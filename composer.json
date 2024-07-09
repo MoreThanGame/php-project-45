@@ -2,9 +2,12 @@
     "name": "hexlet/code",
     "autoload": {
         "files": [
-            "bin/brain-games.php"
+            "bin/brain-games"
         ]
     },
+    "bin": [
+  "bin/brain-games"
+],
     "description": "project45",
     "type": "project",
     "license": "MIT",

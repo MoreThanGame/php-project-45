@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    '760e692227e821b082216dc598dd2065' => $baseDir . '/bin/brain-games.php',
+    'dd0168cc2fb1c4ecd17e2ced2c67aa65' => $baseDir . '/bin/brain-games',
 );

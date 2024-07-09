@@ -7,7 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInitbc24dc8601be8b05de2bf708ddfbc276
 {
     public static $files = array (
-        '760e692227e821b082216dc598dd2065' => __DIR__ . '/../..' . '/bin/brain-games.php',
+        'dd0168cc2fb1c4ecd17e2ced2c67aa65' => __DIR__ . '/../..' . '/bin/brain-games',
     );
 
     public static $classMap = array (
