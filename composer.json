@@ -1,0 +1,17 @@
+{
+    "name": "hexlet/code",
+    "autoload": {
+        "files": [
+            "bin/brain-games.php"
+        ]
+    },
+    "description": "project45",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "anton"
+        }
+    ],
+    "require": {}
+}
