@@ -7,7 +7,18 @@ namespace Composer\Autoload;
 class ComposerStaticInitbc24dc8601be8b05de2bf708ddfbc276
 {
     public static $files = array (
-        'dd0168cc2fb1c4ecd17e2ced2c67aa65' => __DIR__ . '/../..' . '/bin/brain-games',
+        'be01b9b16925dcb22165c40b46681ac6' => __DIR__ . '/..' . '/wp-cli/php-cli-tools/lib/cli/cli.php',
+        '4829b2fddb6a054e51fbedd69dcbc605' => __DIR__ . '/../..' . '/src/Cli.php',
+    );
+
+    public static $prefixesPsr0 = array (
+        'c' => 
+        array (
+            'cli' => 
+            array (
+                0 => __DIR__ . '/..' . '/wp-cli/php-cli-tools/lib',
+            ),
+        ),
     );
 
     public static $classMap = array (
@@ -17,6 +28,7 @@ class ComposerStaticInitbc24dc8601be8b05de2bf708ddfbc276
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixesPsr0 = ComposerStaticInitbc24dc8601be8b05de2bf708ddfbc276::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitbc24dc8601be8b05de2bf708ddfbc276::$classMap;
 
         }, null, ClassLoader::class);

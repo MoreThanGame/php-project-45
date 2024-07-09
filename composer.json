@@ -1,9 +1,7 @@
 {
     "name": "hexlet/code",
     "autoload": {
-        "files": [
-            "bin/brain-games"
-        ]
+        "files": ["src/Cli.php"]
     },
     "bin": [
   "bin/brain-games"
@@ -16,5 +14,5 @@
             "name": "anton"
         }
     ],
-    "require": {}
+    "require": {"wp-cli/php-cli-tools": "^0.12.0"}
 }

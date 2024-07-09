@@ -6,5 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'dd0168cc2fb1c4ecd17e2ced2c67aa65' => $baseDir . '/bin/brain-games',
+    'be01b9b16925dcb22165c40b46681ac6' => $vendorDir . '/wp-cli/php-cli-tools/lib/cli/cli.php',
+    '4829b2fddb6a054e51fbedd69dcbc605' => $baseDir . '/src/Cli.php',
 );
