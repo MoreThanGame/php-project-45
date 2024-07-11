@@ -1,0 +1,57 @@
+#!/usr/bin/env php
+<?php
+
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+$autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
+if (file_exists($autoloadPath1)) {
+    require_once $autoloadPath1;
+} else {
+    require_once $autoloadPath2;
+}
+
+use function cli\line;
+use function cli\prompt;
+use function BrainGames\Cli\game;
+use function BrainGames\Engine\endGame;
+
+function calc($correctAnswers = 0)
+{
+    $name = game();
+    line('What is the result of the expression?');
+    
+    $operations = ['+', '-', '*'];
+    shuffle($operations);
+    
+    for ($i = 0; $i < 3; $i++) {
+        $randOne = rand(1, 100);
+        $randTwo = rand(1, 100);
+        $operation = $operations[$i];
+        switch($operation) {
+            case '+':
+                $question = "$randOne + $randTwo";
+                $rightChoice = $randOne + $randTwo;
+                break;
+            case '-':
+                $question = "$randOne - $randTwo";
+                $rightChoice = $randOne - $randTwo;
+                break;
+            case '*':
+                $question = "$randOne * $randTwo";
+                $rightChoice = $randOne * $randTwo;
+                break;
+        }
+        
+        line("Question: $question");
+        $userChoice = (int) prompt("Your answer: ");
+        if ($userChoice === $rightChoice) {
+            line("Correct!");
+            $correctAnswers++;
+        } else {
+            line("'$userChoice' is wrong answer ;(. Correct answer was '$rightChoice'.\nLet's try again, $name!");
+            break;
+        }
+    }
+    endGame ($correctAnswers, $name);
+}
+
+calc();
