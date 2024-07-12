@@ -1,0 +1,58 @@
+#!/usr/bin/env php
+<?php
+
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+$autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
+if (file_exists($autoloadPath1)) {
+    require_once $autoloadPath1;
+} else {
+    require_once $autoloadPath2;
+}
+
+use function cli\line;
+use function cli\prompt;
+use function BrainGames\Cli\game;
+use function BrainGames\Engine\endGame;
+
+function isPrime($number) {
+    if ($number <= 1) {
+        return false;
+    }
+    if ($number <= 3) {
+        return true;
+    }
+    if ($number % 2 == 0 || $number % 3 == 0) {
+        return false;
+    }
+    for ($i = 5; $i * $i <= $number; $i += 6) {
+        if ($number % $i == 0 || $number % ($i + 2) == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function prime($correctAnswers = 0) {
+    $name = game();
+    line('Answer "yes" if given number is prime. Otherwise answer "no".');
+
+    for ($i = 0; $i < 3; $i++) {
+        $rand = rand(1, 100); // Генерация случайного числа от 1 до 100
+        $question = "$rand";
+        $rightChoice = isPrime($rand) ? "yes" : "no";
+
+        line("Question: $question");
+        $userChoice = prompt("Your answer: ");
+
+        if ($userChoice === $rightChoice) {
+            line("Correct!");
+            $correctAnswers++;
+        } else {
+            line("'$userChoice' is wrong answer ;(. Correct answer was '$rightChoice'.\nLet's try again, $name!");
+            break;
+        }
+    }
+    endGame($correctAnswers, $name);
+}
+
+prime();
