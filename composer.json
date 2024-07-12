@@ -1,5 +1,6 @@
 {
     "name": "hexlet/code",
+    "version": "1.0.0",
     "autoload": {
         "files": ["src/Cli.php", "src/Engine.php"]
     },
