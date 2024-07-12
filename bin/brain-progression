@@ -14,7 +14,8 @@ use function cli\prompt;
 use function BrainGames\Cli\game;
 use function BrainGames\Engine\endGame;
 
-function progression ($correctAnswers = 0) {
+function progression($correctAnswers = 0) 
+{
     $name = game();
     line('What number is missing in the progression?');
 
@@ -43,7 +44,7 @@ function progression ($correctAnswers = 0) {
             break;
         }
     }
-    endGame ($correctAnswers, $name);
+    endGame($correctAnswers, $name);
 }
 
 progression();

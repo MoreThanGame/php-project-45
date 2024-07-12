@@ -51,7 +51,7 @@ function calc($correctAnswers = 0)
             break;
         }
     }
-    endGame ($correctAnswers, $name);
+    endGame($correctAnswers, $name);
 }
 
 calc();

@@ -5,14 +5,14 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function askQuestion ($question, $rightChoice)
+function askQuestion($question, $rightChoice)
 {
     line("Question: $question");
     $userChoice = prompt("Your answer: ");
     return (string) $userChoice === $rightChoice;
 }
 
-function compareAnswers ()
+function compareAnswers()
 {
     if ($userChoice === $rightChoice) {
         line("Correct!");
@@ -23,7 +23,7 @@ function compareAnswers ()
     }
 }
 
-function endGame ($correctAnswers, $name)
+function endGame($correctAnswers, $name)
 {
     if ($correctAnswers === 3) {
         line("Congratulations, $name!");

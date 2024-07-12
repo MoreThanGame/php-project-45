@@ -14,7 +14,7 @@ use function cli\prompt;
 use function BrainGames\Cli\game;
 use function BrainGames\Engine\endGame;
 
-function NOD ($correctAnswers = 0)
+function NOD($correctAnswers = 0)
 {
     $name = game();
     line('Find the greatest common divisor of given numbers.');
@@ -42,7 +42,7 @@ function NOD ($correctAnswers = 0)
             break;
         }
     }
-    endGame ($correctAnswers, $name);
+    endGame($correctAnswers, $name);
 }
 
 NOD();

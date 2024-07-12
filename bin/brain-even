@@ -33,7 +33,7 @@ function questions($correctAnswers = 0)
             break;
         }
     }
-    endGame ($correctAnswers, $name);
+    endGame($correctAnswers, $name);
 }
 
 questions();
